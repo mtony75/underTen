@@ -11,13 +11,13 @@ usrValues = []
 proceed = 1
 while proceed != 0:
     usrInput = input('Value or 0 to End: ')
-    if int(usrInput) == 0:
+    if not usrInput.isdecimal():
+        print('{} is not a valid value.'.format(usrInput))
+        proceed = ''
+    elif int(usrInput) == 0:
         proceed = 0
     elif usrInput.isdecimal() and int(usrInput) > 0:
         usrValues.append(usrInput)
-        proceed = ''
-    elif not usrInput.isdecimal():
-        print('{} is not a valid value.'.format(usrInput))
         proceed = ''
 
 
